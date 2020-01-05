@@ -6,45 +6,55 @@
 package Util;
 
 import java.util.*;
-import lesson2y2020.MathUtil;
+
 
 /**
  *
- * @author Ruslan Nasibov
+ * @author Ruslan Nasibov (@nasibrus)
  */
+
+
 public class Calculator {
 
     public static void main(String[] args) {
-     Calculator();
+        Calculator();
     }
-    public static void Calculator(){
+
+    public static double Calculator() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please insert value to A");
         double a = sc.nextDouble();
         System.out.println("Please insert value to B");
         double b = sc.nextDouble();
         System.out.println("*Please choose operation* \n"
-                + "   *operation + is 1 *\n"
-                + "   *operation - is 2 *\n"
-                + "   *operation * is 3 *\n"
-                + "   *operation / is 4 *\n");
+                + "   *operation + (addition) is 1    *\n"
+                + "   *operation - (Subtraction) is 2 *\n"
+                + "   *operation * (Multiply) is 3    *\n"
+                + "   *operation / (Divide) is 4      *\n"
+                + "   *operation % (Module) is 5      *\n");
         int operation = sc.nextInt();
 
         double result = 0;
-        if (operation == 1) {
-            result = MathUtil.add(a, b);
-        } else if (operation == 2) {
-            result = MathUtil.sub(a, b);
-        } else if (operation == 3) {
-            result = MathUtil.mult(a, b);
-        } else if (operation == 4) {
-            result = MathUtil.div(a, b);
-        } else {
-            System.out.println("Broken down");
+        switch (operation) {
+            case 1:
+                result = MathUtil.add(a, b);
+                break;
+            case 2:
+                result = MathUtil.sub(a, b);
+                break;
+            case 3:
+                result = MathUtil.mult(a, b);
+                break;
+            case 4:
+                result = MathUtil.div(a, b);
+                break;
+            case 5:
+                result = MathUtil.mod(a, b);
+            default:
+                System.out.println("Broken down");
+                break;
         }
-        System.out.println("Result = " + result);
+        return result;
     }
-
-   
 
 }
