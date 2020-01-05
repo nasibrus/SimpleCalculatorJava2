@@ -7,7 +7,7 @@ package Util;
 
 /**
  *
- * @author nasib
+ * @author Ruslan Nasibov (nasibrus)
  */
 public class MathUtil {
      public static double add(double a, double b) {
@@ -24,5 +24,8 @@ public class MathUtil {
 
     public static double div(double a, double b) {
         return a / b;
+    }
+    public static double mod(double a, double b){
+        return a%b;
     }
 }
