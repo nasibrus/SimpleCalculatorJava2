@@ -35,6 +35,7 @@ public class Calculator {
         int operation = sc.nextInt();
 
         double result = 0;
+        //Optimized Version without using if
         switch (operation) {
             case 1:
                 result = MathUtil.add(a, b);
